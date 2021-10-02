@@ -25,6 +25,27 @@ const [advance , setadvance] = useState({
     auto_pick:"",
     Red_zone:"",
     Aim_assist:"",
+    sniffer_rifl:"",
+    Assault_riffle:"",
+    Shotgun:"",
+    SMG:"",
+    Crossbaw:"",
+    Throwoble:"",
+    helmetlv1:"",
+    helmetlv2:"",
+    helmetlv3:"",
+    bagpacklv1:"",
+    bagpacklv2:"",
+    bagpacklv3:"",
+    scope:"",
+    Magazine:"",
+    Muzzle:"",
+    Foregrip:"",
+    Health_Reacovery_items:"",
+    Energy_drink:"",
+    Fual:"",
+    Outfits:"",
+    Ammo:""
 
 })
 
@@ -211,24 +232,87 @@ const Advance = ()=>{
            
           <div className="top">
           <label> sniffer_rifler </label>
-            <input type="numder" placeholder="0-3" />
+            <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.sniffer_rifl} />
             <label> Assault Riffle </label>
-            <input type="numder" placeholder="0-3" />
+            <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.Assault_riffle} />
             <label>Shotguns </label>
-            <input type="numder" placeholder="0-3" />
+            <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.Shotgun} />
           </div>
           <div className="bottom">
           <label> SMG </label>
-            <input type="numder" placeholder="0-3" />
+            <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.SMG} />
             <label> Crossbow </label>
-            <input type="numder" placeholder="0-3" />
+            <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.Crossbaw} />
             <label> Throwoble</label>
-            <input type="numder" placeholder="0-3" />
+            <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.Throwoble} />
           </div>
     
            </div>
-        
-               
+        <br />
+        <hr />
+        <h4>Equip</h4>
+        <div className="Equip">
+            <div className="top">
+                <label > Backpack lv1 </label>
+                <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.bagpacklv1} />
+                <label > Backpack lv2 </label>
+                <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.bagpacklv2} />
+                <label > Backpack lv3 </label>
+                <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.bagpacklv3} />
+                
+            </div>
+            <div className="bottom">
+            <label > halmet lv1 </label>
+                <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.helmetlv1} />
+                <label > halmet lv2 </label>
+                <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.helmetlv2} />
+                <label > halmet lv3 </label>
+                <input type="numder" placeholder="0-3" onChange={advanceData} value={advance.helmetlv3} />
+                
+            </div>
+        </div>
+               <br />
+               <hr />
+               <h4> Attachment </h4>
+              <div className="Attachment">
+              <div className="top">
+               <label> scope</label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.scope} />
+                   <label> Magzine </label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Magazine} />
+               </div>
+               <div className="bottom">
+                   <label > muzzle </label>
+                   
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Muzzle} />
+                   <label> Foregrip</label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Foregrip} />
+               </div>
+              </div>
+               <br />
+               <hr />
+               <h4> Consumables</h4>
+               <div className="Consumables">
+                   <div className="top">
+                   <label > Health Reacovery items </label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Health_Reacovery_items} />
+                   <label > Energy Drinks </label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Energy_drink} />
+                   </div>
+                   <div className="bottom">
+                   <label > Fual </label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Fual} />
+                   </div>
+               </div>
+                <br />
+                <hr />
+                <h4>Other</h4>
+                <div className="other">
+                <label > Outfits</label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Outfits} />
+                   <label > Ammo </label>
+                   <input type="text" placeholder="0-3" onChange={advanceData} value={advance.Ammo} />   
+                </div>
         </>
     )
 
