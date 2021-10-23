@@ -26,3 +26,22 @@
     height: 30px;
     margin-left:10px
 }
+
+
+.mainAdv{
+  
+    display: flex;
+   flex-direction: column;
+
+}
+
+.mvp{
+   width: 100%;
+   display: flex;
+   margin: 10px;
+}
+
+.mvp input{
+margin: 10px ;
+}
+

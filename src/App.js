@@ -1,13 +1,13 @@
 import React from 'react'
 import DataListPages from "./component/DataListPages"
 import Match from "./component/Match"
-import Second_page from "./component/Second_page"
+import Main2 from "./component/second_page/Main2"
 
 const App = () => {
   return (
     <>
       
-   <Second_page/>
+   <Main2/>
     </>
 
   )

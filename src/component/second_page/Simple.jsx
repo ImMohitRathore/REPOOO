@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import "./Second_page.css"
-const Second_page = () => {
+import Advance_page from "./Advance"
+
+const Simple = () => {
     const[ method , setmethod ] = useState("")
-    const [mode , setmode] = useState("")
+    
     const[ Showrank , setshowrank ]=useState(false)
     const [showrange  , setshowrange] = useState(false)
     const [data , setdata]= useState({
@@ -38,6 +39,7 @@ const Second_page = () => {
     
 
     const Simple =()=>{
+        const [mode , setmode] = useState("")
         
         const eventHandle = (e)=>{
             const value = e.target.value;
@@ -104,6 +106,14 @@ const Second_page = () => {
     }
         return (
             <>
+             <section onChange={(e)=>{setmode(e.target.value)}} >
+              <h4> Mode </h4>
+                <input type="radio" value="Squad" name="mode" /> Squad
+                 <input type="radio" value="Duo" name="mode" /> Duo
+                <input type="radio" value="solo" name="mode" /> solo 
+                <br />
+            </section>
+            <br />
         <label htmlFor=""> Add Rank & Prize Amount </label>
         <br/>
         <button className="Add_Rank" onClick={()=>{setshowrank(s => !s)}} > Add Rank </button>
@@ -175,7 +185,7 @@ const Second_page = () => {
     const Advance = ()=>{
         return (
             <>
-            <h1>advance</h1>
+          <Advance_page/>
             </>
         )
     }
@@ -195,13 +205,7 @@ const Second_page = () => {
             </section>
          
           <div className="Mode">
-           <section onChange={(e)=>{setmode(e.target.value)}} >
-              <h4> Mode </h4>
-                <input type="radio" value="Squad" name="mode" /> Squad
-                 <input type="radio" value="Duo" name="mode" /> Duo
-                <input type="radio" value="solo" name="mode" /> solo 
-                <br />
-            </section>
+          
             <br />
             <MethodChecker/>
             
@@ -211,4 +215,4 @@ const Second_page = () => {
     )
 }
 
-export default Second_page
+export default Simple
