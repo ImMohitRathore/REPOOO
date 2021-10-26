@@ -1,0 +1,210 @@
+.header{
+    display: flex;
+    text-align: center;
+    justify-content:space-around;
+    height: 10vh;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.left{
+    flex-basis: 50%;
+}
+.right{
+    flex-basis: 50%;
+    display: flex;
+    justify-content:end;
+    margin-right: 10px;
+}
+
+.right i{
+   font-size: 40px;
+   position: absolute;
+   right: 150px;
+   top: 10px;
+  
+}
+
+.right p{
+    padding-left: 22px;
+    padding-right: 35px;
+   font-weight: 500;
+}
+
+.rotate{
+    transform: rotate(180deg);
+    position: absolute;
+   font-size: 10px;
+   top: 12px;
+   right: 1px;
+}
+
+.left{
+    display: flex;
+}
+
+.left img{
+background-color: #243443;
+width: 150px;
+height: 80%;
+margin-top: 5px;
+
+}
+.image{
+    width: 40vh;
+    
+    background-color: #243443;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+    top:50%;
+    right: -10%;
+
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+border: #2196F3 2px solid;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 7px;
+    width: 7px;
+  left: 1px;
+    bottom: 4px;
+
+    top: 0;
+   
+    border: #2196F3 solid 2px;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+
+  
+ 
+  input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 30px;
+    
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .main_section{
+      background-color: #243443;
+      height:100%;
+      width: 40vh;
+    
+     position: absolute;
+    
+
+  }
+
+  .left h1{
+     font-weight: 500;
+     font-size: 30px;
+     margin: 10px 10px;
+  }
+
+
+ 
+  ul {
+    list-style-type: none;
+}
+
+
+.menu_icon{
+    display: flex;
+    text-align: start;
+    justify-content:start;
+    align-items: center;
+    cursor: pointer;
+    
+    
+   
+ 
+}
+
+.menu_icon i{
+    padding-right: 20px;
+    color: #2196F3;
+    font-size: 25px;
+}
+
+.menu_icon p{
+    color: white;
+
+
+    font-weight: 700;
+}
+
+
+
+
+
+
+.sub-link  a{
+color: white;
+}
+
+.sub-link li{
+    margin-top: 16px;
+    display: flex;
+
+}
+
+.arrows{
+    
+    font-size: 20px;
+    color: #2196F3;
+    position: absolute;
+    left: 50px;
+}
+
+
+.arrow{
+    
+    position: absolute;
+    right: 0;
+}
+
+.menu_icon:hover , i:hover{
+color:white;
+}
+
+.menu_link p , i{
+    margin-right: -10px;
+}

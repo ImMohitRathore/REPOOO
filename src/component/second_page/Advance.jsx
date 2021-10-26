@@ -1,10 +1,17 @@
 
 import React, { useState } from 'react'
-import "./Second_page.css"
+
 
 
 const Advance = () => {
-    const[ method , setmethod ] = useState("")
+    // for card
+    const[ mvp  , setmvp ] = useState(false)
+    const[ A_damage , setA_damage] = useState(false)
+    const [A_kill , setA_kill] = useState(false)
+    const [ Reviver , setReviver] = useState(false)
+    const [greanadier , setgreanadier] = useState(false)
+    const [clutcher  , setclutcher] = useState(false)
+    const [sniper  , setsniper] = useState(false)
     
     const[ Showrank , setshowrank ]=useState(false)
     const [showrange  , setshowrange] = useState(false)
@@ -19,10 +26,22 @@ const Advance = () => {
         prize:""
 
     })
+
+
     const [printdata , setprintdata]=useState([])
     const [printrange , setprintrange] = useState([])
     
     const [mode , setmode] = useState("")
+
+    const [advdata , setadvdata] = useState({
+      mvp:"",
+      top_assaulter_kill:"",
+      top_assaulter_damage:"",
+      top_reviver:"",
+      top_greanadiar:"",
+      top_clutcher:"",
+      top_sniper:""
+    })
         
     const eventHandle = (e)=>{
         const value = e.target.value;
@@ -38,6 +57,15 @@ const Advance = () => {
 
         setrangedata({...rangedata,[name]:value})  
     }
+
+
+    const eventHandle3 = (e)=>{
+      const value = e.target.value;
+      const name = e.target.name;
+
+      setadvdata({...rangedata,[name]:value})  
+  }
+
 
     const sendData = ()=>{
 
@@ -85,6 +113,10 @@ const Advance = () => {
         printrange.filter((ele , i)=>{
             return i!==index
       }))
+
+
+     
+
                   
 }
     return (
@@ -153,61 +185,127 @@ const Advance = () => {
                    <div className="prize"> <p> prize:{ele.prize}  </p></div>
                    <div className="inr"> <p>inr :{ele.prize*2}</p>   </div>
                    <button onClick={()=>{deleteItem2(index)}} > <i class="zmdi zmdi-delete"></i></button>
+                   
                   </div>
                </>
 
                 )
         })
         }
-       
 
+        {/* advance page */}
+        
         <div className="mainAdv">
             <div className="mvp">
-           < input type="CheckBox" />
+           < input type="CheckBox"   onClick= {()=>{setmvp(s => !s)}}onClick= {()=>{setmvp(s => !s)}} />
             <p>MVP</p>
-            <input type="text" placeholder="Numder of Prizes" />
+          <div className="card" style={ {display:mvp? "block ":"none" }}>
+          <input type="text" placeholder="Numder of Prizes" />
             <input type="text" placeholder="prize amount" />
+           <div className="condition">
+             {/* radio btn section*/}
+           <section onChange={eventHandle3}>
+                  <input type="radio" value="minimum" name="mvp"/> <label htmlFor=""> Minimum</label>
+            <input type="radio" name="mvp" value="range" /> <label>range</label>
+               </section>
+               
+           </div>
+          </div>
             </div>
             <div className="mvp">
-           < input type="CheckBox" />
+           < input type="CheckBox"   onClick= {()=>{setA_kill(s => !s)}}/>
             <p>Top_Assaulter(kills)</p>
-            <input type="text" placeholder="Numder of Prizes" />
+            <div className="card" style={ {display:A_kill? "block ":"none" }}>
+          <input type="text" placeholder="Numder of Prizes" />
             <input type="text" placeholder="prize amount" />
+           <div className="condition">
+             {/* radio btn section*/}
+               <section onChange={eventHandle3}>
+                  <input type="radio" name="top_assaulter_kill" value="minimum"/> <label htmlFor=""> Minimum</label>
+            <input type="radio" name="top_assaulter_kill" value="range" /> <label>range</label>
+               </section>
+           </div>
+          </div>
             </div>
             <div className="mvp">
-           < input type="CheckBox" />
+           < input type="CheckBox"   onClick= {()=>{setA_damage(s => !s)}}/>
             <p>Top Assaulter (Damage)</p>
-            <input type="text" placeholder="Numder of Prizes" />
+            <div className="card" style={ {display:A_damage? "block ":"none" }}>
+          <input type="text" placeholder="Numder of Prizes" />
             <input type="text" placeholder="prize amount" />
+           <div className="condition">
+             {/* radio btn section*/}
+               <section onChange={eventHandle3}>
+                  <input type="radio" name="top_assaulter_damage"  value="minimum"/> <label htmlFor=""> Minimum</label>
+            <input type="radio" name="top_assaulter_damage" value="range" /> <label>range</label>
+               </section>
+           </div>
+          </div>
             </div>
             <div className="mvp">
-           < input type="CheckBox" />
+           < input type="CheckBox"   onClick= {()=>{setReviver(s => !s)}}/>
             <p>Top Reviver</p>
-            <input type="text" placeholder="Numder of Prizes" />
+            <div className="card" style={ {display:Reviver? "block ":"none" }}>
+          <input type="text" placeholder="Numder of Prizes" />
             <input type="text" placeholder="prize amount" />
+           <div className="condition">
+             {/* radio btn section*/}
+               <section onChange={eventHandle3}>
+                  <input type="radio" name="top_reviver" value="minimum"/> <label htmlFor=""> Minimum</label>
+            <input type="radio" name="top_reviver" value="range" /> <label>range</label>
+               </section>
+           </div>
+          </div>
             </div>
             <div className="mvp">
-           < input type="CheckBox" />
+           < input type="CheckBox"   onClick= {()=>{setgreanadier(s => !s)}}/>
             <p>Top Greanadier</p>
-            <input type="text" placeholder="Numder of Prizes" />
+            <div className="card" style={ {display:greanadier? "block ":"none" }}>
+          <input type="text" placeholder="Numder of Prizes" />
             <input type="text" placeholder="prize amount" />
+           <div className="condition">
+             {/* radio btn section*/}
+               <section onChange={eventHandle3}>
+                  <input type="radio" name="top_greanadier" value="minimum"/> <label htmlFor=""> Minimum</label>
+            <input type="radio" name="top_greanadier" value="range" /> <label>range</label>
+               </section>
+           </div>
+          </div>
             </div>
             <div className="mvp">
-           < input type="CheckBox" />
+           < input type="CheckBox"   onClick= {()=>{setclutcher(s => !s)}}/>
             <p>Top Clutcher</p>
-            <input type="text" placeholder="Numder of Prizes" />
+            <div className="card" style={ {display:clutcher? "block ":"none" }}>
+          <input type="text" placeholder="Numder of Prizes" />
             <input type="text" placeholder="prize amount" />
+           <div className="condition">
+             {/* radio btn section*/}
+               <section onChange={eventHandle3}>
+                  <input type="radio" name="top_clutcher" value="minimum"/> <label htmlFor=""> Minimum</label>
+            <input type="radio" name="top_clutcher" value="range" /> <label>range</label>
+               </section>
+           </div>
+          </div>
             </div>
             <div className="mvp">
-           < input type="CheckBox" />
+           < input type="CheckBox"   onClick= {()=>{setsniper(s => !s)}}/>
             <p>Top Sniper</p>
-            <input type="text" placeholder="Numder of Prizes" />
+            <div className="card" style={ {display:sniper? "block ":"none" }}>
+          <input type="text" placeholder="Numder of Prizes" />
             <input type="text" placeholder="prize amount" />
+           <div className="condition">
+             {/* radio btn section*/}
+               <section onChange={eventHandle3}>
+                  <input type="radio" name="top_sniper" value="minimum"/> <label htmlFor=""> Minimum</label>
+            <input type="radio" name="top_sniper" value="range" /> <label>range</label>
+               </section>
+           </div>
+          </div>
             </div>
         </div>
+        <br />
         
-
-
+        
         
         </>
     )
