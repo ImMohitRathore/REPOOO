@@ -10,6 +10,7 @@ const Header= () => {
     const[local , setlocal] = useState(false)
     const [non , setnon] = useState(false)
     const [approval , setapproval] =  useState(false)
+    const[dot , setdot] = useState(false)
     return (
         <>
            <div className="header">
@@ -20,16 +21,27 @@ const Header= () => {
                 <input type="checkbox"  onClick={()=>{settoggle(s => !s)}}/>
                 <span class="slider round"></span>
                    </label>
+                   <div className="toggle" onClick={()=>{setdot(s => !s)}}>
+                       <p>...</p>
+                   </div>
                   </div>
                    <h1>COOL ASSIST</h1>
+                  
                </div>
-               <div className="right">
+               <div className="right"  >
                <i class="zmdi zmdi-assignment-account"></i>
                <p>name of user</p>
-               <p className="rotate">^</p>
+              <div className="rotate"> <i class="zmdi zmdi-chevron-down"></i></div>
                </div>
+                   
+              
            </div>
 
+           <div className="right"   style={{display: dot? 'block' :"none"}}>
+               <i class="zmdi zmdi-assignment-account"></i>
+               <p>name of user</p>
+              <div className="rotate"> <i class="zmdi zmdi-chevron-down"></i></div>
+               </div>
            <div  style={{display: toggle ? 'block' :"none"}}  className="main_section">
               <div className="main_menu">
                   <ul>
